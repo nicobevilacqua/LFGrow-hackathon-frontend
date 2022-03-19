@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import logo from './assets/logo.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Button from './components/Button';
@@ -45,6 +46,12 @@ const Link = styled.a`
   color: #61dafb;
 `;
 
+// Pages
+import Profile from './pages/Profile';
+import Home from './pages/Home';
+import Topic from './pages/Topic';
+import Video from './pages/Video';
+
 export default function App({ num = 0 }: { num?: number }) {
   const [count, setCount] = useState(num);
 
@@ -76,6 +83,14 @@ export default function App({ num = 0 }: { num?: number }) {
           </Link>
         </Paragraph>
       </Header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/topic" element={<Topic />} />
+          <Route path="/video" element={<Video />} />
+        </Routes>
+      </BrowserRouter>
     </AppDiv>
   );
 }
