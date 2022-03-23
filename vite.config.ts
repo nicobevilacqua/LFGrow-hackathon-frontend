@@ -5,7 +5,8 @@ const isProd = process.env.NODE_ENV === 'production';
 
 let base = '/';
 if (isProd) {
-  base = '/hackathon/';
+  // base = '/hackathon/';
+  base = '/';
 }
 
 // https://vitejs.dev/config/

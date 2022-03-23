@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider as ProviderRedux } from 'react-redux';
 import App from './App';
 import { createGlobalStyle } from 'styled-components';
+
+// import { Provider as ProviderSelfId } from '@self.id/react';
 
 import './index.css';
 
@@ -14,11 +16,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const ceramic = import.meta.env.CERAMIC_NODE || 'testnet-clay';
+
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <ProviderRedux store={store}>
       <App />
-    </Provider>
+    </ProviderRedux>
     <GlobalStyle />
   </React.StrictMode>,
   document.getElementById('root')
