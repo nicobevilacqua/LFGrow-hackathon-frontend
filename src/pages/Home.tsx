@@ -8,6 +8,8 @@ import { EthereumAuthProvider, ThreeIdConnect } from '@3id/connect';
 import { WindowWithEthereum } from 'types';
 import { MetaMaskInpageProvider } from '@metamask/providers';
 
+import Button from '@components/finity/Button';
+
 // Create a ThreeIdConnect connect instance as soon as possible in your app to start loading assets
 const threeID = new ThreeIdConnect();
 
@@ -61,6 +63,7 @@ const Home = () => {
     <>
       <p>Home</p>
       <button onClick={tryAuthenticate}>Authenticate</button>
+      <Button>asdasd</Button>
     </>
   );
 };
