@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-export enum Types {
+export enum StyleTypes {
   Primary = 'primary',
   Secondary = 'secondary',
   Tertiary = 'tertiary',
@@ -19,16 +19,14 @@ export enum States {
   Disabled = 'disabled',
 }
 
-type Props = {
-  type?: Types;
+type CustomProps = {
+  styleType?: StyleTypes;
   size?: Sizes;
   state?: States;
   leftIcon?: ReactElement;
   centerIcon?: ReactElement;
   rightIcon?: ReactElement;
   text?: string;
-  className: string;
-  disabled?: boolean;
 };
 
 const SizeClasses = {
@@ -37,8 +35,8 @@ const SizeClasses = {
   [Sizes.Small]: 'text-sm',
 };
 
-const TypeClasses = {
-  [Types.Primary]: `
+const StyleTypeClasses = {
+  [StyleTypes.Primary]: `
     bg-finity-primary-500 
     hover:bg-finity-primary-400
     focus:bg-finity-primary-500
@@ -48,7 +46,7 @@ const TypeClasses = {
     disabled:stroke-finity-light-grey-800
     disabled:text-finity-light-grey-800
   `,
-  [Types.Secondary]: `
+  [StyleTypes.Secondary]: `
     bg-white
     border-2
     border-finity-primary-400
@@ -69,7 +67,7 @@ const TypeClasses = {
     disabled:text-finity-light-grey-800
     disabled:border-finity-light-grey-400
   `,
-  [Types.Tertiary]: `
+  [StyleTypes.Tertiary]: `
     bg-white
     border-2
     border-finity-light-grey-400
@@ -87,27 +85,9 @@ const TypeClasses = {
   `,
 };
 
-const StatesClasses = {
-  [States.Resting]: {
-    button: 'bg-finity-primary-500',
-    content: 'text-white stroke-white',
-  },
-  [States.Hover]: {
-    button: 'bg-finity-primary-400',
-    content: 'text-white stroke-white',
-  },
-  [States.Focused]: {
-    button: 'bg-finity-primary-500',
-    content: 'text-white stroke-white',
-  },
-  [States.Disabled]: {
-    button: 'bg-finity-light-grey-500',
-    content: 'text-finity-light-grey-600 stroke-finity-light-grey-600',
-  },
-};
-const Button: React.FC<Props> = (props) => {
+const Button: React.FC<Partial<HTMLButtonElement> & CustomProps> = (props) => {
   const {
-    type = Types.Primary,
+    styleType = StyleTypes.Primary,
     size = Sizes.Large,
     leftIcon,
     centerIcon,
@@ -132,7 +112,7 @@ const Button: React.FC<Props> = (props) => {
     <button
       type="button"
       disabled={disabled}
-      className={`pointer flex flex-row align-center justify-between items-center px-5 py-2 rounded ${TypeClasses[type]} ${className}`}
+      className={`pointer flex flex-row align-center justify-between items-center px-5 py-2 rounded ${StyleTypeClasses[styleType]} ${className}`}
     >
       {cLeftIcon}
       {cCenterIcon}

@@ -60,11 +60,10 @@ async function tryAuthenticate() {
 
 const Home = () => {
   return (
-    <>
-      <p>Home</p>
-      <button onClick={tryAuthenticate}>Authenticate</button>
-      <Button>asdasd</Button>
-    </>
+    <div className="w-30 flex flex-col justify-center">
+      <h1 className="">Design System</h1>
+      <Button onClick={tryAuthenticate}>Authenticate</Button>
+    </div>
   );
 };
 

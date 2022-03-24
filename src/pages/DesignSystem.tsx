@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button, { Sizes, Types } from '@components/finity/Button';
+import Button, { Sizes, StyleTypes } from '@components/finity/Button';
 
 import { ReactComponent as ActivityRegularOutlined } from '@assets/icons/regular/activity-outlined.svg';
 import { ReactComponent as PlusRegularOutlined } from '@assets/icons/regular/plus-outlined.svg';
@@ -15,14 +15,14 @@ const DesignSystem = () => {
           leftIcon={<ActivityRegularOutlined />}
           rightIcon={<PlusRegularOutlined />}
           text={'Connect to Wallet'}
-          type={Types.Primary}
+          styleType={StyleTypes.Primary}
           className="my-2"
         ></Button>
         <Button
           leftIcon={<ActivityRegularOutlined />}
           rightIcon={<PlusRegularOutlined />}
           text={'Connect to Wallet'}
-          type={Types.Primary}
+          styleType={StyleTypes.Primary}
           className="my-2"
           disabled={true}
         ></Button>
@@ -30,14 +30,14 @@ const DesignSystem = () => {
           leftIcon={<ActivityRegularOutlined />}
           rightIcon={<PlusRegularOutlined />}
           text={'Connect to Wallet'}
-          type={Types.Secondary}
+          styleType={StyleTypes.Secondary}
           className="my-2"
         ></Button>
         <Button
           leftIcon={<ActivityRegularOutlined />}
           rightIcon={<PlusRegularOutlined />}
           text={'Connect to Wallet'}
-          type={Types.Secondary}
+          styleType={StyleTypes.Secondary}
           className="my-2"
           disabled={true}
         ></Button>
@@ -46,7 +46,7 @@ const DesignSystem = () => {
           rightIcon={<PlusRegularOutlined />}
           text={'Connect to Wallet Large'}
           size={Sizes.Large}
-          type={Types.Tertiary}
+          styleType={StyleTypes.Tertiary}
           className="my-2"
         ></Button>
         <Button
@@ -54,7 +54,7 @@ const DesignSystem = () => {
           rightIcon={<PlusRegularOutlined />}
           text={'Connect to Wallet Medium'}
           size={Sizes.Medium}
-          type={Types.Tertiary}
+          styleType={StyleTypes.Tertiary}
           className="my-2"
         ></Button>
         <Button
@@ -62,14 +62,14 @@ const DesignSystem = () => {
           rightIcon={<PlusRegularOutlined />}
           text={'Connect to Wallet Small'}
           size={Sizes.Small}
-          type={Types.Tertiary}
+          styleType={StyleTypes.Tertiary}
           className="my-2"
         ></Button>
         <Button
           leftIcon={<ActivityRegularOutlined />}
           rightIcon={<PlusRegularOutlined />}
           text={'Connect to Wallet'}
-          type={Types.Tertiary}
+          styleType={StyleTypes.Tertiary}
           className="my-2"
           disabled={true}
         ></Button>
