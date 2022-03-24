@@ -12,20 +12,25 @@ import Home from './pages/Home';
 import Topic from './pages/Topic';
 import Video from './pages/Video';
 import Feed from './pages/Feed';
+import DesignSystem from './pages/DesignSystem';
 
-export default function App({ num = 0 }: { num?: number }) {
+export default function App() {
   return (
-    <div className="flex justify-center">
-      {/* <header>asdasd</header> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/topic" element={<Topic />} />
-          <Route path="/video/:cid" element={<Video />} />
-          <Route path="/feed" element={<Feed />} />
-        </Routes>
-      </BrowserRouter>
+    <div className="flex flex-col justify-center ">
+      <header>asdasd</header>
+      <section className="grow">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/topic" element={<Topic />} />
+            <Route path="/video/:cid" element={<Video />} />
+            <Route path="/feed" element={<Feed />} />
+            <Route path="/design-system" element={<DesignSystem />} />
+          </Routes>
+        </BrowserRouter>
+      </section>
+      <footer>footer</footer>
     </div>
   );
 }
