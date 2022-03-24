@@ -62,7 +62,7 @@ const Home = () => {
   return (
     <div className="w-30 flex flex-col justify-center">
       <h1 className="">Design System</h1>
-      <Button onClick={tryAuthenticate}>Authenticate</Button>
+      <Button onClick={tryAuthenticate} text={'Authenticate'} />
     </div>
   );
 };

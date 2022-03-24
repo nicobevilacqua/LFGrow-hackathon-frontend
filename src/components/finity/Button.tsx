@@ -85,7 +85,12 @@ const StyleTypeClasses = {
   `,
 };
 
-const Button: React.FC<Partial<HTMLButtonElement> & CustomProps> = (props) => {
+const Button: React.FC<
+  Partial<HTMLButtonElement> &
+    Partial<React.HTMLAttributes<HTMLElement>> &
+    Partial<ReactElement> &
+    CustomProps
+> = (props) => {
   const {
     styleType = StyleTypes.Primary,
     size = Sizes.Large,
@@ -95,6 +100,7 @@ const Button: React.FC<Partial<HTMLButtonElement> & CustomProps> = (props) => {
     text,
     className,
     disabled = false,
+    onClick,
   } = props;
 
   const [cLeftIcon, cCenterIcon, cRightIcon] = [leftIcon, centerIcon, rightIcon].map((icon) => {
@@ -111,6 +117,7 @@ const Button: React.FC<Partial<HTMLButtonElement> & CustomProps> = (props) => {
   return (
     <button
       type="button"
+      onClick={onClick}
       disabled={disabled}
       className={`pointer flex flex-row align-center justify-between items-center px-5 py-2 rounded ${StyleTypeClasses[styleType]} ${className}`}
     >
