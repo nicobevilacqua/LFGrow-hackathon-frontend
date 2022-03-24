@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import logo from './assets/logo.svg';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
-import Button from './components/Button';
+import Footer from './components/Footer';
 
 // Pages
 import Profile from './pages/Profile';
@@ -16,9 +14,9 @@ import DesignSystem from './pages/DesignSystem';
 
 export default function App() {
   return (
-    <div className="flex flex-col justify-center ">
-      <header>asdasd</header>
-      <section className="grow">
+    <div className="flex flex-col grow">
+      <Header />
+      <section className="grow container">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -30,7 +28,7 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </section>
-      <footer>footer</footer>
+      <Footer />
     </div>
   );
 }
