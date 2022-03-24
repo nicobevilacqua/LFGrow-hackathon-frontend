@@ -16,7 +16,7 @@ export default function App() {
   return (
     <div className="flex flex-col grow">
       <Header />
-      <section className="grow container">
+      <section className="grow flex justify-center">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
