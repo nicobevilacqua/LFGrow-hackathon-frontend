@@ -11,6 +11,7 @@ import Topic from './pages/Topic';
 import Video from './pages/Video';
 import Feed from './pages/Feed';
 import DesignSystem from './pages/DesignSystem';
+import LitCeramic from './pages/LitCeramic';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="/video/:cid" element={<Video />} />
             <Route path="/feed" element={<Feed />} />
             <Route path="/design-system" element={<DesignSystem />} />
+            <Route path="/lit-ceramic-example" element={<LitCeramic />} />
           </Routes>
         </BrowserRouter>
       </section>

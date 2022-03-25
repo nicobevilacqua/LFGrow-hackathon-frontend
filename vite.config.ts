@@ -33,4 +33,7 @@ export default defineConfig({
       '@store': path.resolve(__dirname, './src/store'),
     },
   },
+  define: {
+    'process.env': {},
+  },
 });
