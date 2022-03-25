@@ -1,4 +1,5 @@
 import Card from '@components/finity/Card';
+import SectionTab from '@components/finity/SectionTab';
 import React from 'react';
 
 const cardData = {
@@ -15,10 +16,13 @@ const cards = Array(6).fill(cardData);
 const Feed = () => {
   return (
     <>
-      <div style={{ display: 'flex', flexFlow: 'wrap', justifyContent: 'center', gap: 20 }}>
-        {cards.map((card, index) => (
-          <Card key={index} {...card} />
-        ))}
+      <div>
+        <SectionTab />
+        <div style={{ display: 'flex', flexFlow: 'wrap', justifyContent: 'center', gap: 20 }}>
+          {cards.map((card, index) => (
+            <Card key={index} {...card} />
+          ))}
+        </div>
       </div>
     </>
   );
